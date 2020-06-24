@@ -12,10 +12,7 @@ const employers = [
   ' Ann',
 ];
 
-const employersNames = employers
-  .filter((item) => item.length > 0 && item.length != '')
-  .map((item) => item.toLowerCase().trim());
-
+//---------------------------------------------------------------
 // var employersNames = [];
 // for (var i = 0; i < employers.length; i++) {
 //   if (employers[i].length > 0 && employers[i].length != '') {
@@ -24,6 +21,23 @@ const employersNames = employers
 // }
 // for (var i = 0; i < employersNames.length; i++) {
 //   employersNames[i] = employersNames[i].toLowerCase().trim();
+// }
+
+const employersNames = employers
+  .filter((item) => item.length > 0 && item.length != '')
+  .map((item) => item.toLowerCase().trim());
+//---------------------------------------------------------------
+
+//---------------------------------------------------------------
+
+// function calcCash(own) {
+//   own = own || 0;
+//   var everyCash = Array.prototype.slice.call(arguments);
+//   var total = own;
+//   for (var i = 0; i < everyCash[1].length; i++) {
+//     total += +everyCash[1][i];
+//   }
+//   return total;
 // }
 
 const sponsors = {
@@ -39,27 +53,9 @@ const sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
 const calcCash = (cash = 0) => cash.reduce((a, b) => a + b);
 const money = calcCash(cash);
 
-// function calcCash(own) {
-//   own = own || 0;
-//   var everyCash = Array.prototype.slice.call(arguments);
-//   var total = own;
-//   for (var i = 0; i < everyCash[1].length; i++) {
-//     total += +everyCash[1][i];
-//   }
-//   return total;
-// }
+//----------------------------------------------------------------
 
-const makeBusiness = ({ owner = 'Sam', director = 'Victor', cash, emp }) => {
-  console.log(`
-      We have a business. Owner: ${owner}, director: ${director}.
-      Our budget: ${cash}. And our employers: ${emp}
-      And we have a sponsors:
-      ${sumSponsors}
-      Note. Be careful with ${eu[0]}. It's a huge risk.
-    `);
-};
-makeBusiness({ cash: money, emp: employersNames });
-
+//-----------------------------------------------------------------------------------
 // function makeBusiness(owner, director, cash, emp) {
 //   director = director || 'Victor';
 //   var sumSponsors = sponsors.eu.concat(sponsors.rus, 'unexpected sponsor');
@@ -78,3 +74,16 @@ makeBusiness({ cash: money, emp: employersNames });
 //   console.log('Note. Be careful with ' + sponsors.eu[0] + ". It's a huge risk.");
 // }
 // makeBusiness.apply(null, ['Sam', null, money, employersNames]);
+
+const makeBusiness = ({ owner = 'Sam', director = 'Victor', cash, emp }) => {
+  console.log(`
+      We have a business. Owner: ${owner}, director: ${director}.
+      Our budget: ${cash}. And our employers: ${emp}
+      And we have a sponsors:
+      ${sumSponsors}
+      Note. Be careful with ${eu[0]}. It's a huge risk.
+    `);
+};
+makeBusiness({ cash: money, emp: employersNames });
+
+//-------------------------------------------------------------------------------------
